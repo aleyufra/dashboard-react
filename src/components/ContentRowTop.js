@@ -36,7 +36,7 @@ function ContentRowTop() {
 			{/*<!-- Content Row Top -->*/}
 			<div className="container-fluid">
 				<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
-					<h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+					<h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
 				</div>
 
 				{/*<!-- Content Row Movies-->*/}
@@ -57,7 +57,7 @@ function ContentRowTop() {
 										</div>
 									</div>
 									<div className="col-auto">
-										<i className="fas fa-award fa-2x text-gray-300"></i>
+										{/* <i className="fas fa-user fa-2x text-gray-300"></i> */}
 									</div>
 								</div>
 							</div>
@@ -78,7 +78,7 @@ function ContentRowTop() {
 										</div>
 									</div>
 									<div className="col-auto">
-										<i className="fas fa-film fa-2x text-gray-300"></i>
+
 									</div>
 								</div>
 							</div>
@@ -95,12 +95,12 @@ function ContentRowTop() {
 										</div>
 										<div className="h5 mb-0 font-weight-bold text-gray-800">
 											{!products.countByCategory && <p>0 (No products)</p>}
-											{products.countByCategory && products.countByCategory.length === 1 && <p>{products.countByCategory.length} Product</p>}
-											{products.countByCategory && products.countByCategory.length > 1 && <p>{products.countByCategory.length} Products</p>}
+											{products.countByCategory && products.countByCategory.length === 1 && <p>{products.countByCategory.length} Category</p>}
+											{products.countByCategory && products.countByCategory.length > 1 && <p>{products.countByCategory.length} Categories</p>}
 										</div>
 									</div>
 									<div className="col-auto">
-										<i className="fas fa-user fa-2x text-gray-300"></i>
+										{/* <i className="fas fa-user fa-2x text-gray-300"></i> */}
 									</div>
 								</div>
 							</div>
@@ -116,7 +116,7 @@ function ContentRowTop() {
 					<div className="col-lg-6 mb-4">
 						<div className="card shadow mb-4">
 							<div className="card-header py-3">
-								<h5 className="m-0 font-weight-bold text-gray-800">Last product in Data Base</h5>
+								<h5 className="m-0 font-weight-bold text-gray-800">Last product created in Data Base</h5>
 							</div>
 							<div className="card-body">
 								{
@@ -141,7 +141,7 @@ function ContentRowTop() {
 											<p>${lastProduct.price - (lastProduct.price * (lastProduct.discount / 100))} {lastProduct.discount}%OFF!</p>
 										}
 										{lastProduct.discount === 0 && <p>${lastProduct.price}</p>}
-										<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View product details</a>
+										<a className="btn btn-dark" target="_blank" rel="nofollow" href="/">View product details</a>
 									</>
 								}
 							</div>
@@ -171,9 +171,45 @@ function ContentRowTop() {
 											return (
 												<>
 													<div className="col-lg-6 mb-4">
-														<div className="card bg-dark text-white shadow">
+														<div className="card bg-gradient-dark text-white shadow">
 															<div className="card-body">
-																{category.name}
+																{category.name} - Total: {category.count}
+															</div>
+														</div>
+													</div>
+												</>
+											)
+										})
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="col-lg-12 mb-4">
+						<div className="card shadow mb-4">
+							<div className="card-header py-3">
+								<h5 className="m-0 font-weight-bold text-gray-800">Products in Data Base</h5>
+							</div>
+							<div className="card-body">
+								<div className="row">
+									{
+										!products.products &&
+										<>
+											<div className="col-lg-6 mb-4">
+												No products...
+											</div>
+										</>
+									}
+									{
+										products.products &&
+										products.products.map((product) => {
+											return (
+												<>
+													<div className="col-lg-6 mb-4">
+														<div className="card bg-gradient-dark text-white shadow">
+															<div className="card-body">
+																ID: {product.id} - {product.name}
 															</div>
 														</div>
 													</div>

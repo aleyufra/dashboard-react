@@ -1,5 +1,5 @@
 import React from 'react';
-import foto from '../assets/images/jordan-walke.png';
+import foto from '../assets/images/LogoRedondo.png';
 import { useEffect, useState } from 'react';
 
 function TopBar() {
@@ -8,7 +8,7 @@ function TopBar() {
 	return (
 		<React.Fragment>
 			{/*<!-- Topbar -->*/}
-			<nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+			<nav className="navbar navbar-expand navbar-light bg-light topbar mb-4 static-top shadow navbar-color">
 
 				{/*<!-- Sidebar Toggle (Topbar) -->*/}
 				<button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
@@ -41,7 +41,7 @@ function TopBar() {
 					{/*<!-- Nav Item - User Information -->*/}
 					<li className="nav-item dropdown no-arrow">
 						<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-							<span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
+							<span className="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
 							<img className="img-profile rounded-circle" src={foto} alt="Jordan Walke - Creador de React" width="60" />
 						</a>
 					</li>
